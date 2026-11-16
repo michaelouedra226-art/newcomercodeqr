@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07102B">
 <title>New Comer Group — Liens officiels</title>
-<meta name="description" content="New Comer Group — Paris Sportifs - Transactions Mobiles. Site officiel, canaux officiels, applications, inscription et contact.">
+<meta name="description" content="New Comer Group — Paris Sportifs - Transactions Mobiles. Site officiel, canaux officiels, applications, code promo, assistance et contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
@@ -54,6 +54,9 @@ h2{margin:0 0 6px;font-size:1.4rem;line-height:1.25;letter-spacing:-.01em}
 .code span{color:var(--mu);font-size:.85rem}
 .code b{display:block;font:800 1.5rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em}
 .code .btn{min-height:48px;padding:8px 14px}
+.cgrp{margin-top:20px}.chead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.chead h3{margin:0;font-size:1.15rem}
+.video{display:block;width:100%;max-width:360px;aspect-ratio:9/16;border-radius:16px;background:#000;border:1px solid var(--line)}
+.bonus{color:var(--or);font-weight:800}
 footer{margin-top:44px;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--mu);font-size:.9rem}
 footer p{margin:0 0 6px;max-width:70ch}
 noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
@@ -79,7 +82,8 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
     <li><a href="#site">Site officiel</a></li>
     <li><a href="#canaux">Canaux</a></li>
     <li><a href="#apps">Applications</a></li>
-    <li><a href="#inscription">Inscription</a></li>
+    <li><a href="#promo">Code promo</a></li>
+    <li><a href="#assistance">Assistance</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -103,17 +107,24 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
     <div class="grid g3" id="o-apps"></div>
   </section>
 
-  <section id="inscription" aria-labelledby="t4">
-    <h2 id="t4">S’inscrire sur les plateformes</h2>
-    <p class="lead">Créez votre compte avec le lien officiel de New Comer Group. Si le code promo vous est demandé, saisissez le code ci-dessous.</p>
+  <section id="promo" aria-labelledby="t4">
+    <h2 id="t4">Code promo</h2>
+    <p class="lead">Avec le code promo New Comer Group, bénéficiez de <span class="bonus">200 % de bonus</span>.</p>
     <div id="o-code"></div>
-    <div class="grid g3" id="o-inscr"></div>
+  </section>
+
+  <section id="assistance" aria-labelledby="t6">
+    <h2 id="t6">Assistance</h2>
+    <p class="lead">Besoin d’aide ? Regardez cette vidéo pour savoir comment annuler un bonus.</p>
+    <video class="video" controls playsinline preload="metadata" poster="annuler-bonus.jpg" src="annuler-bonus.mp4" aria-label="Vidéo : comment annuler un bonus">
+      Votre navigateur ne peut pas lire cette vidéo.
+    </video>
   </section>
 
   <section id="contact" aria-labelledby="t5">
     <h2 id="t5">Nous contacter</h2>
-    <p class="lead">Écrivez à New Comer Group sur l’une de nos deux lignes WhatsApp.</p>
-    <div class="grid g2" id="o-contact"></div>
+    <p class="lead">Écrivez-nous sur WhatsApp, avec le numéro de votre plateforme.</p>
+    <div id="o-contact"></div>
   </section>
 </main>
 
@@ -125,8 +136,6 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 <p id="live" class="sr" role="status" aria-live="polite"></p>
 <noscript>Activez JavaScript pour afficher les liens de New Comer Group.</noscript>
 
-<!-- NOTE WHATSAPP : le 2e numéro (06 72 12 02) commence par 0 juste après l’indicatif +226.
-     Il est conservé tel quel, sans modification. Voir « À VÉRIFIER » dans la configuration ci-dessous. -->
 <script>
 /* ==========================================================================
    CONFIGURATION — C’EST ICI QU’IL FAUT MODIFIER LES LIENS ET LE CODE PROMO
@@ -143,19 +152,16 @@ const CONFIG = {
   facebook: "À CONFIGURER",                      // URL de la page Facebook
   codePromo: "NCG26",                            // code promo unique (une seule section, avec « Copier le code »)
 
-  whatsapp: [                                    // indicatif Burkina Faso +226
-    { numero: "54 03 64 64", lien: "https://wa.me/22654036464" },
-    // À VÉRIFIER : numéro commençant par 0 après +226. Chiffres non modifiés ;
-    // tester ce lien une fois. S’il est refusé par WhatsApp, vérifier le numéro.
-    { numero: "06 72 12 02", lien: "https://wa.me/22606721202" }
+  contacts: [                                    // numéros WhatsApp classés par plateforme (indicatif Burkina Faso +226)
+    { titre: "1xBet", plateformes: ["1xbet"], numeros: ["66 35 95 95", "54 03 64 64", "06 72 12 02"] },
+    { titre: "Betwinner et Melbet", plateformes: ["betwinner", "melbet"], numeros: ["56 96 45 45", "46 98 12 12"] }
   ],
 
   plateformes: [                                 // logo vide = logo intégré
     { id: "1xbet", nom: "1xBet", logo: "",
-      android: "https://reffpa.com/L?tag=d_1237677m_45361c_&site=1237677&ad=45361",                   // lien officiel de téléchargement Android
-      inscription: "À CONFIGURER" },             // lien d’inscription officiel, tel que fourni
-    { id: "betwinner", nom: "Betwinner", logo: "", android: "betwinner.apk", inscription: "À CONFIGURER" },
-    { id: "melbet", nom: "Melbet", logo: "", android: "https://refpa3665.com/L?tag=d_2254935m_18775c_&site=2254935&ad=18775", inscription: "À CONFIGURER" }
+      android: "https://reffpa.com/L?tag=d_1237677m_45361c_&site=1237677&ad=45361" },   // lien officiel de téléchargement Android
+    { id: "betwinner", nom: "Betwinner", logo: "", android: "betwinner.apk" },
+    { id: "melbet", nom: "Melbet", logo: "", android: "https://refpa3665.com/L?tag=d_2254935m_18775c_&site=2254935&ad=18775" }
   ]
 };
 /* ======================== FIN DE LA CONFIGURATION ======================== */
@@ -213,14 +219,15 @@ $('o-apps').innerHTML = CONFIG.plateformes.map(p =>
   pBtn(p, p.android, 'ghost', 'Télécharger ' + p.nom, 'Cliquez pour télécharger l’application Android')).join('');
 
 const cp = has(CONFIG.codePromo);
-$('o-code').innerHTML = '<div class="code"><div><span>Code promo New Comer Group</span><b>' + (cp ? esc(CONFIG.codePromo) : 'À configurer') + '</b></div>' +
+$('o-code').innerHTML = '<div class="code"><div><span>Code promo New Comer Group · 200 % de bonus</span><b>' + (cp ? esc(CONFIG.codePromo) : 'À configurer') + '</b></div>' +
   '<button class="btn ghost" type="button"' + (cp ? ' data-copy="' + esc(CONFIG.codePromo) + '"' : ' disabled') + '>Copier le code</button></div>';
 
-$('o-inscr').innerHTML = CONFIG.plateformes.map(p =>
-  pBtn(p, p.inscription, 'or', 'S’inscrire sur ' + p.nom, 'Cliquez pour créer votre compte', 'À configurer')).join('');
-
-$('o-contact').innerHTML = CONFIG.whatsapp.map(w =>
-  btn({ url: w.lien, cls: 'wa', hint: 'ouvre directement WhatsApp', icon: ic('whatsapp', 'Logo WhatsApp'), label: 'WhatsApp — ' + w.numero, sub: 'Cliquez pour nous écrire sur WhatsApp' })).join('');
+$('o-contact').innerHTML = CONFIG.contacts.map(g =>
+  '<div class="cgrp"><div class="chead">' +
+    g.plateformes.map(id => { const p = CONFIG.plateformes.find(x => x.id === id); return '<span class="plogo">' + logo(p.logo, 'Logo ' + p.nom, p.id) + '</span>'; }).join('') +
+    '<h3>' + esc(g.titre) + '</h3></div><div class="grid g2">' +
+    g.numeros.map(n => btn({ url: 'https://wa.me/226' + n.replace(/\s/g, ''), cls: 'wa', hint: 'ouvre directement WhatsApp', icon: ic('whatsapp', 'Logo WhatsApp'), label: 'WhatsApp — ' + n, sub: 'Cliquez pour nous écrire sur WhatsApp' })).join('') +
+    '</div></div>').join('');
 
 async function copyCode(b) {
   const c = b.dataset.copy;
