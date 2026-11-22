@@ -73,8 +73,11 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 @media(max-width:639px){
   #assistance .help-grid{grid-template-columns:none;grid-auto-columns:84%;grid-auto-flow:column;gap:16px;overflow-x:auto;margin-inline:-16px;padding:0 16px 12px;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain}
   #assistance .help-card{scroll-snap-align:start}
+  #assistance .chead{min-height:3.6rem;align-items:flex-start}
+  #assistance .help-description{min-height:4.65em}
   .assist-scroll-hint{display:block;margin-top:4px}
 }
+@media(max-width:340px){#assistance .help-description{min-height:6.2em}}
 </style>
 </head>
 <body>
