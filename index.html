@@ -63,6 +63,31 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 @media(min-width:640px){.g2,.g3{grid-template-columns:1fr 1fr}.logo-tile{width:210px}h2{font-size:1.6rem}}
 @media(min-width:960px){.g3{grid-template-columns:repeat(3,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Mise en page plus aérée, surtout sur grand écran. */
+header{padding:36px 0 16px}
+section{padding:48px 0 12px}
+section+section{border-top:1px solid rgba(42,62,112,.22)}
+h2{margin-bottom:10px;font-size:clamp(1.5rem,2.2vw,1.85rem)}
+.lead{max-width:70ch;margin-bottom:22px}
+.grid{gap:16px}
+.btn{min-height:68px;padding:14px 18px;border-radius:18px}
+.help-grid{display:grid;gap:18px;margin-top:28px}
+.help-card{display:grid;grid-template-rows:auto auto;gap:18px;padding:20px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(14,28,66,.96),rgba(9,20,49,.98));box-shadow:0 18px 44px rgba(0,0,0,.2)}
+.help-kicker{display:inline-flex;align-items:center;padding:6px 11px;border:1px solid rgba(255,106,26,.42);border-radius:999px;color:var(--or);font-size:.76rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.help-copy h3{margin:13px 0 8px;font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.25;letter-spacing:-.015em}
+.help-copy p{margin:0;color:var(--mu);font-size:.96rem}
+.video{width:100%;max-width:340px;max-height:540px;margin-inline:auto;aspect-ratio:9/16;object-fit:contain}
+.video--withdrawal{aspect-ratio:9/20}
+@media(min-width:760px){
+  .help-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .help-card{gap:22px;padding:24px}
+}
+@media(min-width:1100px){
+  .wrap{width:min(100% - 64px,1200px)}
+  .help-card{grid-template-columns:minmax(0,1fr) minmax(180px,.95fr);grid-template-rows:auto;align-items:center;min-height:560px}
+  .help-card .video{max-width:260px;max-height:480px}
+  .help-copy{align-self:start}
+}
 </style>
 </head>
 <body>
@@ -115,10 +140,29 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 
   <section id="assistance" aria-labelledby="t6">
     <h2 id="t6">Assistance</h2>
-    <p class="lead">Besoin d’aide ? Regardez cette vidéo pour savoir comment annuler un bonus.</p>
-    <video class="video" controls playsinline preload="metadata" poster="annuler-bonus.jpg" src="annuler-bonus.mp4" aria-label="Vidéo : comment annuler un bonus">
-      Votre navigateur ne peut pas lire cette vidéo.
-    </video>
+    <p class="lead">Des tutoriels vidéo pour vous accompagner dans vos opérations sur les plateformes.</p>
+    <div class="help-grid">
+      <article class="help-card" aria-labelledby="help-bonus">
+        <div class="help-copy">
+          <span class="help-kicker">Tutoriel vidéo</span>
+          <h3 id="help-bonus">Annuler un bonus</h3>
+          <p>Suivez les étapes présentées pour annuler un bonus depuis votre compte.</p>
+        </div>
+        <video class="video" controls playsinline preload="metadata" poster="annuler-bonus.jpg" src="annuler-bonus.mp4" aria-label="Vidéo : comment annuler un bonus">
+          Votre navigateur ne peut pas lire cette vidéo.
+        </video>
+      </article>
+      <article class="help-card" aria-labelledby="help-retrait">
+        <div class="help-copy">
+          <span class="help-kicker">Tutoriel vidéo</span>
+          <h3 id="help-retrait">Retirer de l’argent avec 1XBET Espèces</h3>
+          <p>La démonstration montre les étapes d’un retrait. Le code visible à la fin est un code de test inactif.</p>
+        </div>
+        <video class="video video--withdrawal" controls playsinline preload="metadata" poster="assistance-retrait-1xbet.jpg" src="assistance-retrait-1xbet.mp4" aria-label="Tutoriel vidéo : retrait d’argent via 1XBET Espèces">
+          Votre navigateur ne peut pas lire cette vidéo.
+        </video>
+      </article>
+    </div>
   </section>
 
   <section id="contact" aria-labelledby="t5">
