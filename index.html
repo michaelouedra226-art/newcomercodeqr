@@ -64,13 +64,16 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 @media(min-width:960px){.g3{grid-template-columns:repeat(3,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 /* Seule la disposition des tutoriels est adaptée aux petits et grands écrans. */
-#assistance .help-grid{display:grid;grid-template-columns:1fr;gap:24px}
-#assistance .help-card{width:100%;min-width:0;max-width:640px;margin-inline:auto}
+#assistance .help-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+#assistance .help-card{min-width:0}
 #assistance .help-description{margin:0 0 12px;color:var(--mu)}
 #assistance .video{margin-inline:auto;max-height:640px}
 #assistance .video--withdrawal{aspect-ratio:9/20}
-@media(min-width:760px){
-  #assistance .help-grid{grid-template-columns:1fr;gap:32px}
+.assist-scroll-hint{display:none;color:var(--mu);font-size:.82rem}
+@media(max-width:639px){
+  #assistance .help-grid{grid-template-columns:none;grid-auto-columns:84%;grid-auto-flow:column;gap:16px;overflow-x:auto;margin-inline:-16px;padding:0 16px 12px;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain}
+  #assistance .help-card{scroll-snap-align:start}
+  .assist-scroll-hint{display:block;margin-top:4px}
 }
 </style>
 </head>
@@ -124,7 +127,7 @@ noscript{display:block;padding:16px;text-align:center;background:var(--surf)}
 
   <section id="assistance" aria-labelledby="t6">
     <h2 id="t6">Assistance</h2>
-    <p class="lead">Des tutoriels vidéo pour vous accompagner dans vos opérations sur les plateformes.</p>
+    <p class="lead">Des tutoriels vidéo pour vous accompagner dans vos opérations sur les plateformes.<span class="assist-scroll-hint">Faites glisser pour voir les autres tutoriels.</span></p>
     <div class="help-grid">
       <article class="help-card" aria-labelledby="help-bonus">
         <div class="chead"><h3 id="help-bonus">Annuler un bonus</h3></div>
